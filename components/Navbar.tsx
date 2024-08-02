@@ -17,7 +17,7 @@ export default function Navbar() {
                     <span className="sr-only">Logo</span>
                     <img
                       className="h-8 w-auto"
-                      src="https://meshjs.dev/logo-mesh/black/logo-mesh-black-128x128.png"
+                      src="/ada.webp"
                       alt="logo"
                     />
                   </>
