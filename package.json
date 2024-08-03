@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@blockfrost/blockfrost-js": "^5.5.0",
     "@headlessui/react": "^1.7.10",
     "@heroicons/react": "^2.0.15",
     "@meshsdk/contracts": "^1.0.1",

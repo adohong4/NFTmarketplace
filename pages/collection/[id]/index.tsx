@@ -34,11 +34,9 @@ export default function ProductDetail() {
     async function sendADA() {
         try {
             setLoading(true);
-
             const usedAddress = await wallet.getUsedAddresses();
             const address = usedAddress[0];
             const forgingScript = ForgeScript.withOneSignature(address);
-
             const tx = new Transaction({ initiator: wallet });
 
             if (!product) {
@@ -46,8 +44,6 @@ export default function ProductDetail() {
                 setLoading(false);
                 return;
             }
-
-
             // define asset#1 metadata
             const assetMetadata1: AssetMetadata = {
                 "name": product.name,
@@ -86,9 +82,7 @@ export default function ProductDetail() {
 
     return (
         <div className="bg-white">
-
             <div className="md:py-20 max-w-6xl mx-auto">
-
                 <div className="flex flex-col lg:flex-row md:px-10 gap-[50px] lg:gap-[100px]">
                     <div className="w-full md:w-auto flex-[1.5] max-w-[500px] lg:max-w-full mx-auto lg:mx-0">
                         <img
@@ -97,7 +91,6 @@ export default function ProductDetail() {
                             className="transform duration-500 ease-in-out hover:scale-105"
                         />
                     </div>
-
 
                     <div className="flex-[1] py-3">
                         <Link href="/collection">
@@ -109,12 +102,9 @@ export default function ProductDetail() {
                                 Back To All Products
                             </button>
                         </Link>
-
-
                         <div className="text-[34px] font-semibold mb-1 leading-tight">
                             {product.name}
                         </div>
-
                         <div className="text-md font-medium text-black/[0.5] mb-5">
                             Owned by
                             <a
@@ -123,7 +113,6 @@ export default function ProductDetail() {
                                 {product.author}
                             </a>
                         </div>
-
                         <div className="mt-6 mb-5">
                             <h3 className="sr-only">Reviews</h3>
                             <div className="flex items-center">
@@ -150,12 +139,9 @@ export default function ProductDetail() {
                                 </a>
                             </div>
                         </div>
-
                         <div className="text-md font-medium text-black/[0.5]">
                             Current price
                         </div>
-
-
                         <div className="flex flex-col lg:flex-row mb-10">
                             <div className="mr-2 text-lg font-semibold">
                                 {product.priceADA} ADA
@@ -164,17 +150,13 @@ export default function ProductDetail() {
                                 {product.priceVND}
                             </div>
                         </div>
-
-
                         <div className="text-[19px] font-semibold mb-1 leading-tight">
                             Description
                         </div>
-
                         <div className="text-sm font-medium text-black/[0.5]">
                             {product.description}
                         </div>
-
-
+                        {/* check connect wallet */}
                         {connected ? (
                             <button
                                 type="button"
